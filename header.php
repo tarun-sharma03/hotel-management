@@ -36,8 +36,8 @@
                             <nav class="main_nav">
                                 <ul class="d-flex flex-row align-items-center justify-content-start">
                                     <li><a href="index.php">Home</a></li>
-                                    <li><a href="user/">User Area</a></li>
-                                    <li><a href="hotel.php">Hotel Area</a></li>
+                                    <li><a href="user/index.php">User Area</a></li>
+                                    <li><a href="hotel/index.php">Hotel Area</a></li>
                                     <li><a href="admin.php">Admin Area</a></li>
                                 </ul>
                             </nav>
@@ -57,8 +57,8 @@
             <div class="menu_content d-flex flex-column align-items-center justify-content-center">
                 <ul class="menu_nav_list text-center">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="/user">User Area</a></li>
-                    <li><a href="hotel.php">Hotel Area</a></li>
+                    <li><a href="user/index.php">User Area</a></li>
+                    <li><a href="hotel/index.php">Hotel Area</a></li>
                     <li><a href="admin.php">Admin Area</a></li>
                 </ul>
                 <div class="menu_review"><a href="#">Book Now</a></div>

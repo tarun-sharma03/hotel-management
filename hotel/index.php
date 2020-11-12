@@ -20,7 +20,7 @@
     /*author:starttemplate*/
     /*reference site : starttemplate.com*/
     body {
-        background-image: url('assets/images/blog_1.jpg');
+        background-image: url('assets/images/blog_3.jpg');
         background-position: center;
         background-size: cover;
 
@@ -105,7 +105,7 @@
                     <div class="form-login"></br>
                         <h4>Secure Login</h4>
                         </br>
-                        <form action="userLoginAct.php" method="post">
+                        <form action="hotelLoginAct.php" method="post">
                             <input type="email" name="email" class="form-control input-sm chat-input" placeholder="email" />
                             </br></br>
                             <input type="password" name="password" class="form-control input-sm chat-input" placeholder="password" />
