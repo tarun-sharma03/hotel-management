@@ -1,10 +1,12 @@
 <?php
 include "assets/fxn.php";
+
 if (isset($_POST["submit"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    $res = getThis("SELECT * FROM `users` WHERE `email`='$email' AND `password`='$password'");
+    $res = getThis("SELECT * FROM `hotels` WHERE `email`='$email' AND `password`='$password'");
+
     if ($res) {
         $_SESSION["UID"] = $res[0]['id'];
 ?>
@@ -15,7 +17,7 @@ if (isset($_POST["submit"])) {
     } else {
     ?>
         <script>
-            alert("Wrong Information");
+            alert("Wrong information!!");
             window.location = "index.php";
         </script>
 <?php

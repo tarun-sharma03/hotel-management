@@ -14,25 +14,26 @@ if (isset($_POST["submit"])) {
             alert("Guest already registered!!");
             window.location = "index.php";
         </script>
-    <?php
-    }
-
-    $res = doThis("INSERT INTO `users`(`fullName`, `mobile`, `email`, `password`) VALUES('$name', '$phone', '$email', '$password')");
-    if ($res) {
-        $_SESSION["UID"] = $res;
-    ?>
-        <script>
-            alert("Guest Registered!!");
-            window.location = "dashboard.php";
-        </script>
-    <?php
+        <?php
     } else {
-    ?>
-        <script>
-            alert("There is some technical error!!");
-            window.location = "register.php";
-        </script>
+
+        $res = doThis("INSERT INTO `users`(`fullName`, `mobile`, `email`, `password`) VALUES('$name', '$phone', '$email', '$password')");
+        if ($res) {
+            $_SESSION["UID"] = $res;
+        ?>
+            <script>
+                alert("Guest Registered!!");
+                window.location = "dashboard.php";
+            </script>
+        <?php
+        } else {
+        ?>
+            <script>
+                alert("There is some technical error!!");
+                window.location = "register.php";
+            </script>
 <?php
+        }
     }
 }
 ?>

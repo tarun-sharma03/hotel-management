@@ -12,23 +12,34 @@ if (isset($_POST["submit"])) {
     $state = $_POST["state"];
     $city = $_POST["city"];
 
-    $res = doThis("INSERT INTO `hotels`(`fullName`, `email`, `mobile`, `password`, `address`, `description`, `rent`, `stateID`, `cityID`) 
-    VALUES('$name', '$email', '$phone', '$password', '$address', '$description', '$rent', '$state', '$city')");
-
-    if ($res) {
-        $_SESSION["UID"] = $res;
+    $check = getThis("SELECT * FROM `hotels` WHERE `email` = '$email' OR `mobile`='$phone'");
+    if ($check) {
 ?>
         <script>
-            // window.location = "dashboard.php";
+            alert("Hotel already registered!!");
+            window.location = "index.php";
         </script>
-    <?php
+        <?php
     } else {
-    ?>
-        <script>
-            alert("There is some technical error!!");
-            // window.location = "index.php";
-        </script>
+
+        $res = doThis("INSERT INTO `hotels`(`fullName`, `email`, `mobile`, `password`, `address`, `description`, `rent`, `stateID`, `cityID`) 
+    VALUES('$name', '$email', '$phone', '$password', '$address', '$description', '$rent', '$state', '$city')");
+
+        if ($res) {
+            $_SESSION["UID"] = $res;
+        ?>
+            <script>
+                // window.location = "dashboard.php";
+            </script>
+        <?php
+        } else {
+        ?>
+            <script>
+                alert("There is some technical error!!");
+                // window.location = "index.php";
+            </script>
 <?php
+        }
     }
 }
 ?>
