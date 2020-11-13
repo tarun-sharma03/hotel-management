@@ -21,14 +21,13 @@
         </div>
     </div>
 </div>
-<!-- Search Box -->
 <div class="search_box" id="search_box">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="search_box_container d-flex flex-row align-items-center justify-content-start">
                     <div class="search_form_container">
-                        <form action="showhotels.php" id="search_form" class="search_form">
+                        <form action="showhotels.php" method="post" id="search_form" class="search_form">
                             <div class="d-flex flex-lg-row flex-column align-items-center justify-content-start">
                                 <table class="table table-borderless">
                                     <thead>
@@ -49,13 +48,13 @@
                                         <td>
                                             <div class="position-relative form-group">
                                                 <label for="exampleCity" class="home_text">Check-In Date</label>
-                                                <input type="checkin" class="form-control">
+                                                <input type="date" name="checkin" class="form-control">
                                             </div>
                                         </td>
                                         <td>
                                             <div class="position-relative form-group">
                                                 <label for="exampleCity" class="home_text">Check-Out Date</label>
-                                                <input type="checkout" class="form-control">
+                                                <input type="date" name="checkout" class="form-control">
                                             </div>
                                         </td>
                                         <td>
