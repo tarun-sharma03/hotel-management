@@ -61,14 +61,14 @@ if (isset($_SESSION["UID"]) == NULL) {
                                     <div>Hotels Anytime, Anywhere</div>
                                 </a>
                             </div>
-                            <!-- <nav class="main_nav">
+                            <nav class="main_nav">
                                 <ul class="d-flex flex-row align-items-center justify-content-start">
-                                    <li><a href="../index.php">Home</a></li>
-                                    <li><a href="user.php">User Area</a></li>
-                                    <li><a href="hotel.php">Hotel Area</a></li>
-                                    <li><a href="admin.php">Admin Area</a></li>
+                                    <li><a href="index.php">Home</a></li>
+                                    <!-- <li><a href="user.php">User Area</a></li>
+                                    <li><a href="hotel.php">Hotel Area</a></li> -->
+                                    <li><a href="bookings.php">All Bookings</a></li>
                                 </ul>
-                            </nav> -->
+                            </nav>
                             <div class="header_extra d-flex flex-row align-items-center justify-content-start ml-auto">
                                 <div class="phone d-flex flex-row align-items-center justify-content-start"><i class="fa fa-phone" aria-hidden="true"></i><span>1800-100-100</span></div>
                                 <div class="book_button trans_200"><a href="logout.php">Logout</a></div>
@@ -83,12 +83,12 @@ if (isset($_SESSION["UID"]) == NULL) {
         <div class="menu">
             <div class="background_image" style="background-image:url(assets/images/menu.jpg)"></div>
             <div class="menu_content d-flex flex-column align-items-center justify-content-center">
-                <!-- <ul class="menu_nav_list text-center">
-                    <li><a href="../index.php">Home</a></li>
-                    <li><a href="user.php">User Area</a></li>
-                    <li><a href="hotel.php">Hotel Area</a></li>
-                    <li><a href="admin.php">Admin Area</a></li>
-                </ul> -->
+                <ul class="menu_nav_list text-center">
+                    <li><a href="index.php">Home</a></li>
+                    <!-- <li><a href="user.php">User Area</a></li>
+                                    <li><a href="hotel.php">Hotel Area</a></li> -->
+                    <li><a href="bookings.php">All Bookings</a></li>
+                </ul>
                 <div class="menu_review"><a href="logout.php">Book Now</a></div>
             </div>
         </div>

@@ -120,6 +120,7 @@
                                 </span>
                             </div>
                         </form>
+                        <a href="../index.php" class="btn btn-block btn-danger">Back to Home</a>
                     </div>
                 </div>
             </div>

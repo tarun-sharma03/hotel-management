@@ -1,6 +1,6 @@
 <?php
 include "assets/fxn.php";
-if ($_SESSION["UID"]) {
+if (isset($_SESSION["UID"])) {
 ?>
     <script>
         window.location = "dashboard.php";
@@ -131,6 +131,8 @@ if ($_SESSION["UID"]) {
                                 </span>
                             </div>
                         </form>
+
+                        <a href="../index.php" class="btn btn-block btn-danger"> Back to Home</a>
                     </div>
                 </div>
             </div>
