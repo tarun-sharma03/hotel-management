@@ -27,7 +27,7 @@ if (isset($_SESSION["UID"]) == NULL) {
     <title>Awesome Rooms</title>
     <link rel="stylesheet" type="text/css" href="assets/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/styles/A.main_styles.css%2bresponsive.css%2cMcc.p_HEf5oLt-.css.pagespeed.cf.BYY-BVgrvU.css" />
-
+    <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -61,14 +61,14 @@ if (isset($_SESSION["UID"]) == NULL) {
                                     <div>Hotels Anytime, Anywhere</div>
                                 </a>
                             </div>
-                            <!-- <nav class="main_nav">
+                            <nav class="main_nav">
                                 <ul class="d-flex flex-row align-items-center justify-content-start">
-                                    <li><a href="../index.php">Home</a></li>
-                                    <li><a href="user.php">User Area</a></li>
-                                    <li><a href="hotel.php">Hotel Area</a></li>
-                                    <li><a href="admin.php">Admin Area</a></li>
+                                    <li><a href="index.php">Home</a></li>
+                                    <li><a href="bookings.php">All Bookings</a></li>
+                                    <!-- <!-- <li><a href="hotel.php">Hotel Area</a></li> -->
+                                    <li><a href="addroom.php">Add Rooms</a></li>
                                 </ul>
-                            </nav> -->
+                            </nav>
                             <div class="header_extra d-flex flex-row align-items-center justify-content-start ml-auto">
                                 <div class="phone d-flex flex-row align-items-center justify-content-start"><i class="fa fa-phone" aria-hidden="true"></i><span>1800-100-100</span></div>
                                 <div class="book_button trans_200"><a href="logout.php">Logout</a></div>

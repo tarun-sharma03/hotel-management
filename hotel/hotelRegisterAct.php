@@ -8,7 +8,7 @@ if (isset($_POST["submit"])) {
     $password = $_POST["password"];
     $address = $_POST["address"];
     $description = $_POST["description"];
-    $rent = $_POST["rent"];
+    // $rent = $_POST["rent"];
     $state = $_POST["state"];
     $city = $_POST["city"];
 
@@ -22,8 +22,8 @@ if (isset($_POST["submit"])) {
         <?php
     } else {
 
-        $res = doThis("INSERT INTO `hotels`(`fullName`, `email`, `mobile`, `password`, `address`, `description`, `rent`, `stateID`, `cityID`) 
-    VALUES('$name', '$email', '$phone', '$password', '$address', '$description', '$rent', '$state', '$city')");
+        $res = doThis("INSERT INTO `hotels`(`fullName`, `email`, `mobile`, `password`, `address`, `description`, `stateID`, `cityID`) 
+    VALUES('$name', '$email', '$phone', '$password', '$address', '$description', '$state', '$city')");
 
         if ($res) {
             $_SESSION["UID"] = $res;

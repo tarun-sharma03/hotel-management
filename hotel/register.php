@@ -1,4 +1,14 @@
-<?php include "assets/fxn.php"; ?>
+<?php
+include "assets/fxn.php";
+if (isset($_SESSION["UID"])) {
+?>
+    <script>
+        window.location = "dashboard.php";
+    </script>
+<?php
+}
+?>
+
 <html>
 
 <head>
@@ -119,8 +129,8 @@
                             <input type="text" name="address" class="form-control input-sm chat-input" placeholder="postal address" />
                             </br></br>
                             <input type="text" name="description" class="form-control input-sm chat-input" placeholder="Description" />
-                            </br></br>
-                            <input type="number" name="rent" class="form-control input-sm chat-input" placeholder="Rent Per Night Per Room" />
+                            <!-- </br></br>
+                            <input type="number" name="rent" class="form-control input-sm chat-input" placeholder="Rent Per Night Per Room" /> -->
                             </br></br>
                             <div class="position-relative form-group">
                                 <!-- <label for="exampleCity" class="home_text">State</label> -->

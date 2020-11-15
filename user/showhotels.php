@@ -33,7 +33,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Hotel Name</th>
-                            <th scope="col">Description</th>
+                            <th scope="col">Room Description</th>
                             <th scope="col">Address</th>
                             <th scope="col">Rent Per Night</th>
                             <th scope="col">Action</th>
@@ -49,45 +49,50 @@
                         $checkin = $_POST["checkin"];
                         $checkout = $_POST["checkout"];
 
-                        $hotels = getThis("SELECT `id`, `fullName`, `email`, `mobile`, `password`, `address`, `description`, `rent` FROM `hotels` WHERE `stateID`='$state' AND `cityID`='$city' ORDER BY `fullName` ASC");
+                        $hotels = getThis("SELECT `id`, `fullName`, `email`, `mobile`, `password`, `address`, `description` FROM `hotels` WHERE `stateID`='$state' AND `cityID`='$city' ORDER BY `fullName` ASC");
 
                         if ($hotels) {
                             for ($i = 0; $i < sizeof($hotels); $i++) {
                                 $hotel = $hotels[$i];
                                 $id = $hotel['id'];
-                                $check = getThis("SELECT `id`, `userID`, `hotelID`, `checkin`, `checkout`, `enabled` FROM `bookings` WHERE `checkin` BETWEEN '$checkin' AND '$checkout' OR `checkout`>= '$checkin' AND `hotelID`='$id' AND `enabled`=1");
+                                $rooms = getThis("SELECT * FROM `rooms` WHERE `hotelID`='$id'");
+                                for ($j = 0; $j < sizeof($rooms); $j++) {
+                                    $room = $rooms[$j];
+                                    $roomId = $room['id'];
+                                    $check = getThis("SELECT `id`, `enabled` FROM `bookings` WHERE `checkin` BETWEEN '$checkin' AND '$checkout' OR `checkout`>= '$checkin' AND `roomID`='$roomId' AND `enabled`=1");
 
                         ?>
-                                <tr>
-                                    <td>
-                                        <?php echo $i + 1; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $hotel['fullName']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $hotel['description']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $hotel['address']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $hotel['rent']; ?>
-                                    </td>
-                                    <td>
-                                        <?php
-                                        if (sizeof($check) == 0) {
-                                        ?>
-                                            <a href="details.php?id=<?php echo $hotel['id']; ?>&in=<?php echo $checkin; ?>&out=<?php echo $checkout; ?>" class="btn btn-primary">Details</a>
-                                        <?php
-                                        } else {
-                                            echo "Unavailable on selected date";
-                                        }
-                                        ?>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>
+                                            <?php echo $i + 1; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $hotel['fullName']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $room['description']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $hotel['address']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $room['rent']; ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if (sizeof($check) == 0) {
+                                            ?>
+                                                <a href="details.php?id=<?php echo $room['id']; ?>&in=<?php echo $checkin; ?>&out=<?php echo $checkout; ?>" class="btn btn-primary">Details</a>
+                                            <?php
+                                            } else {
+                                                echo "Unavailable on selected date";
+                                            }
+                                            ?>
+                                        </td>
+                                    </tr>
                             <?php
 
+                                }
                             }
                         } else {
                             ?>
