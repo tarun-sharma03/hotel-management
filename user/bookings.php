@@ -43,36 +43,42 @@ $bookings = getThis("SELECT * FROM `bookings` WHERE `userID`='$id'");
                         <?php
                         for ($i = 0; $i < sizeof($bookings); $i++) {
                             $booking = $bookings[$i];
-                            $hotelId = $booking['hotelID'];
-                            $hotel = getThis("SELECT `fullName`, `address` from `hotels` WHERE `id`='$hotelId'");
+                            $roomId = $booking['roomID'];
+                            $hotelID = getThis("SELECT `hotelID` FROM `rooms` WHERE `id`='$roomId'");
+                            $hotelID = $hotelID[0]['hotelID'];
+                            // echo $hotelID;
+                            $hotel = getThis("SELECT `fullName`, `address` from `hotels` WHERE `id`='$hotelID'");
+                            // print_r($hotel);
                             $hotelName = $hotel[0]['fullName'];
                         ?>
-                            <td>
-                                <?php echo $i + 1; ?>
-                            </td>
-                            <td>
-                                <?php echo $hotelName; ?>
-                            </td>
-                            <td>
-                                <?php echo $hotel[0]['address']; ?>
-                            </td>
-                            <td>
-                                <?php echo substr($booking['checkin'], 0, 10); ?>
-                            </td>
-                            <td>
-                                <?php $en = $booking['enabled'];
-                                if ($en == 2) {
-                                    echo "Pending   ";
-                                ?>
-                                    <a href="cancelBooking.php?id=<?php echo $booking['id']; ?>" class="btn btn-danger"> Cancel</a>
-                                <?php
-                                } else if ($en == 1) {
-                                    echo "Approved";
-                                } else if ($en == 0) {
-                                    echo "Cancelled";
-                                }
-                                ?>
-                            </td>
+                            <tr>
+                                <td>
+                                    <?php echo $i + 1; ?>
+                                </td>
+                                <td>
+                                    <?php echo $hotelName; ?>
+                                </td>
+                                <td>
+                                    <?php echo $hotel[0]['address']; ?>
+                                </td>
+                                <td>
+                                    <?php echo substr($booking['checkin'], 0, 10); ?>
+                                </td>
+                                <td>
+                                    <?php $en = $booking['enabled'];
+                                    if ($en == 2) {
+                                        echo "Pending   ";
+                                    ?>
+                                        <a href="cancelBooking.php?id=<?php echo $booking['id']; ?>" class="btn btn-danger"> Cancel</a>
+                                    <?php
+                                    } else if ($en == 1) {
+                                        echo "Approved";
+                                    } else if ($en == 0) {
+                                        echo "Cancelled";
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
                         <?php
                         }
                         ?>
