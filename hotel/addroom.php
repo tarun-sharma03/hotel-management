@@ -91,13 +91,17 @@
     <h3>Input the details of the rooms you want to list on Awesome Rooms</h3>
     <form action="addRoomact.php" method="post">
         <div>
+            <label for="fname">Room Name</label>
+            <input type="text" class="cool" name="name" />
+        </div>
+        <div>
             <label for="fname">Room Description</label>
             <input type="text" class="cool" name="desc" />
         </div>
 
         <div>
             <label for="lname">Room Rent</label>
-            <input type="number" class="cool" name="rent" />
+            <input type="text" class="cool" name="rent" />
         </div>
 
         <div>

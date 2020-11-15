@@ -4,8 +4,9 @@ if (isset($_POST["submit"])) {
     $hotelId = $_SESSION["UID"];
     $description = $_POST["desc"];
     $rent = $_POST["rent"];
+    $name = $_POST["name"];
 
-    $res = doThis("INSERT INTO `rooms`(`hotelID`, `description`, `rent`) VALUES ('$hotelId', '$description', '$rent')");
+    $res = doThis("INSERT INTO `rooms`(`hotelID`,`name`, `description`, `rent`) VALUES ('$hotelId','$name', '$description', '$rent')");
     if ($res) {
 ?>
         <script>

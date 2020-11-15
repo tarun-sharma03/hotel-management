@@ -27,6 +27,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Room Name</th>
                         <th scope="col">Guest Name</th>
                         <th scope="col">Check In Date</th>
                         <th scope="col">Check Out Date</th>
@@ -38,16 +39,21 @@
                 <tbody>
                     <?php
                     $id = $_SESSION["UID"];
-                    $bookings = getThis("SELECT * FROM `bookings` WHERE `hotelID`='$id' AND `enabled` = '2'");
-                    if (sizeof($bookings) == 0) {
-                        echo "No New Booking Requests Right Now!!";
-                    } else {
+                    $rooms = getThis("SELECT * FROM `rooms` WHERE `hotelID`='$id'");
+                    for ($j = 0; $j < sizeof($rooms); $j++) {
+                        $room = $rooms[$j];
+                        $roomID = $room['id'];
+                        $bookings = getThis("SELECT * FROM `bookings` WHERE `roomID`='$roomID' AND `enabled` = '2'");
+
                         for ($i = 0; $i < sizeof($bookings); $i++) {
                             $booking = $bookings[$i];
                     ?>
                             <tr>
                                 <td>
                                     <?php echo $i + 1; ?>
+                                </td>
+                                <td>
+                                    <?php echo $room['name']; ?>
                                 </td>
                                 <td>
                                     <?php $user = $booking['userID'];
@@ -74,6 +80,7 @@
                     <?php
                         }
                     }
+
                     ?>
                 </tbody>
             </table>
