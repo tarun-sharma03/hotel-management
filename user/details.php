@@ -2,9 +2,11 @@
 $id = $_GET["id"];
 $checkout = $_GET["out"];
 $checkin = $_GET["in"];
-$hotel = getThis("SELECT * FROM `hotels` WHERE `id`='$id'");
+$room = getThis("SELECT * FROM `rooms` WHERE `id`='$id'");
+$room = $room[0];
+$hotelId = $room['hotelID'];
+$hotel = getThis("SELECT * FROM `hotels` WHERE `id`='$hotelId'");
 $hotel = $hotel[0];
-
 ?>
 
 
@@ -138,10 +140,18 @@ $hotel = $hotel[0];
                     </tr>
                     <tr>
                         <td>
+                            Rent Description
+                        </td>
+                        <td>
+                            <?php echo $room['description']; ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             Rent Per Room Per Night
                         </td>
                         <td>
-                            <?php echo $hotel['rent']; ?>
+                            <?php echo $room['rent']; ?>
                         </td>
                     </tr>
                     <tr>
@@ -149,11 +159,13 @@ $hotel = $hotel[0];
                             Action
                         </td>
                         <td>
-                            <a href="bookHotel.php?id=<?php echo $hotel['id']; ?>&in=<?php echo $checkin; ?>&out=<?php echo $checkout; ?>" class="btn btn-success">Book Now</a>
+                            <a href="bookHotel.php?id=<?php echo $room['id']; ?>&in=<?php echo $checkin; ?>&out=<?php echo $checkout; ?>" class="btn btn-success">Book Now</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
+
+            <a href="dashboard.php" class="btn btn-block btn-danger">Cancel Search</a>
         </div>
     </div>
 </div>

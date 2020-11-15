@@ -44,6 +44,7 @@
 
 
                         <?php
+                        $count = 1;
                         $state = $_POST["state"];
                         $city = $_POST["city"];
                         $checkin = $_POST["checkin"];
@@ -59,12 +60,12 @@
                                 for ($j = 0; $j < sizeof($rooms); $j++) {
                                     $room = $rooms[$j];
                                     $roomId = $room['id'];
-                                    $check = getThis("SELECT `id`, `enabled` FROM `bookings` WHERE `checkin` BETWEEN '$checkin' AND '$checkout' OR `checkout`>= '$checkin' AND `roomID`='$roomId' AND `enabled`=1");
+                                    $check = getThis("SELECT `id`, `enabled` FROM `bookings` WHERE (`checkin` BETWEEN '$checkin' AND '$checkout' OR `checkout`>= '$checkin') AND `roomID`='$roomId' AND `enabled`=1");
 
                         ?>
                                     <tr>
                                         <td>
-                                            <?php echo $i + 1; ?>
+                                            <?php echo $count++; ?>
                                         </td>
                                         <td>
                                             <?php echo $hotel['fullName']; ?>
@@ -86,6 +87,7 @@
                                             <?php
                                             } else {
                                                 echo "Unavailable on selected date";
+                                                // print_r($check);
                                             }
                                             ?>
                                         </td>

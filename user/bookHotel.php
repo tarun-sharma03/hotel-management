@@ -1,13 +1,13 @@
 <?php
 include "assets/fxn.php";
 
-$hotelID = $_GET["id"];
+$roomID = $_GET["id"];
 $checkin = $_GET["in"];
 $checkout = $_GET["out"];
 $userID = $_SESSION["UID"];
 
-$res = doThis("INSERT INTO `bookings`(`userID`, `hotelID`, `checkin`, `checkout`, `enabled`) 
-VALUES ('$userID', '$hotelID', '$checkin', '$checkout', 2)");
+$res = doThis("INSERT INTO `bookings`(`userID`, `roomID`, `checkin`, `checkout`, `enabled`) 
+VALUES ('$userID', '$roomID', '$checkin', '$checkout', 2)");
 
 if ($res) {
 ?>
