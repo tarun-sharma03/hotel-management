@@ -60,7 +60,8 @@
                                 for ($j = 0; $j < sizeof($rooms); $j++) {
                                     $room = $rooms[$j];
                                     $roomId = $room['id'];
-                                    $check = getThis("SELECT `id`, `enabled` FROM `bookings` WHERE (`checkin` BETWEEN '$checkin' AND '$checkout' OR `checkout`>= '$checkin') AND `roomID`='$roomId' AND `enabled`=1");
+                                    // $check = getThis("SELECT `id`, `enabled` FROM `bookings` WHERE ((`checkin` BETWEEN '$checkin' AND '$checkout') OR `checkout`>= '$checkout') AND `roomID`='$roomId' AND `enabled`=1");
+                                    $check = getThis("SELECT `id`, `enabled` FROM `bookings` WHERE ((`checkin` BETWEEN '$checkin' AND '$checkout') OR (`checkout` BETWEEN '$checkin' AND '$checkout')) AND `roomID`='$roomId' AND `enabled`=1");
 
                         ?>
                                     <tr>
