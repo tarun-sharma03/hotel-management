@@ -38,7 +38,7 @@
                                     <li><a href="index.php">Home</a></li>
                                     <li><a href="user/index.php">User Area</a></li>
                                     <li><a href="hotel/index.php">Hotel Area</a></li>
-                                    <li><a href="admin.php">Admin Area</a></li>
+                                    <li><a href="admin/index.php">Admin Area</a></li>
                                 </ul>
                             </nav>
                             <div class="header_extra d-flex flex-row align-items-center justify-content-start ml-auto">
@@ -59,7 +59,7 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="user/index.php">User Area</a></li>
                     <li><a href="hotel/index.php">Hotel Area</a></li>
-                    <li><a href="admin.php">Admin Area</a></li>
+                    <li><a href="admin/index.php">Admin Area</a></li>
                 </ul>
                 <div class="menu_review"><a href="#">Book Now</a></div>
             </div>

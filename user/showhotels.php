@@ -33,6 +33,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Hotel Name</th>
+                            <th scope="col">Room Name</th>
                             <th scope="col">Room Description</th>
                             <th scope="col">Address</th>
                             <th scope="col">Rent Per Night</th>
@@ -70,6 +71,9 @@
                                         </td>
                                         <td>
                                             <?php echo $hotel['fullName']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $room['name']; ?>
                                         </td>
                                         <td>
                                             <?php echo $room['description']; ?>

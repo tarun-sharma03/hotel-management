@@ -36,7 +36,7 @@ $hotel = $hotel[0];
                 <div class="intro_content">
                     <div class="quote"><img src="assets/images/xquote.png.pagespeed.ic.Zukxn3IeVb.png" alt=""></div>
                     <div class="intro_text">
-                        <p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus hendrerit, id lobortis leo luctus nec.</p>
+                        <p>One of the best hotels I ever stayed in. Affordable and good service also. The rooms have an excellent view and are super comfortable and cozy. I recommend this hotel to everyone about to come in this area for vacations.</p>
                     </div>
                     <div class="intro_author d-flex flex-row align-items-center justify-content-start">
                         <div class="author_image"><img src="assets/images/xauthor_1.jpg.pagespeed.ic.fQyFqxrZj3.jpg" alt="https://unsplash.com/@onurozkardes"></div>
@@ -113,6 +113,15 @@ $hotel = $hotel[0];
 
             <table class="table table-striped">
                 <tbody>
+                    <tr>
+                        <td>
+                            Room Name
+                        </td>
+                        <td>
+                            <?php echo $room['name']; ?>
+                        </td>
+                    </tr>
+
                     <tr>
                         <td>
                             Address
